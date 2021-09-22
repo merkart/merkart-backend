@@ -1,14 +1,14 @@
 package org.merkart.app.Util;
 
-import jdk.nashorn.internal.objects.annotations.Setter;
+
+import lombok.Setter;
 import org.merkart.app.Controller.Dto.ProductDto;
 import org.merkart.app.repository.Document.Category;
 import org.merkart.app.repository.Document.Product;
 
 import java.util.Date;
-
+@Setter
 public class ProductMap {
-    @Setter
     public static ProductDto doProductDTO(Product product){
         ProductDto newProductDto= new ProductDto();
         newProductDto.setName(product.getName());
