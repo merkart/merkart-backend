@@ -3,13 +3,21 @@ package org.merkart.app.Controller;
 import org.merkart.app.Service.ProductService;
 import org.merkart.app.repository.Document.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/product")
 public class ProductController {
 
     private final ProductService productService;
+    @GetMapping
+    public ResponseEntity<List<Product>> all()
+    {
+        return ResponseEntity.ok( productService.all() );
+    }
 
     public ProductController(@Autowired ProductService productService) {
         this.productService = productService;

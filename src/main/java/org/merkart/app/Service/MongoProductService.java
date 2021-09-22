@@ -1,10 +1,13 @@
 package org.merkart.app.Service;
 
 import org.merkart.app.repository.Document.Product;
-import org.merkart.app.repository.Document.ProductRepository;
+import org.merkart.app.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -14,6 +17,11 @@ public class MongoProductService implements ProductService {
 
     public MongoProductService(@Autowired ProductRepository productRepository) {
         this.productRepository = productRepository;
+    }
+    @Override
+    public List<Product> all()
+    {
+        return new ArrayList<>( productRepository.findAll() );
     }
 
     @Override
