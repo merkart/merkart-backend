@@ -15,13 +15,5 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/{productId}")
-    public Product getProductById(@PathVariable String productId){
-        return productService.findById(productId);
-    }
 
-    @PutMapping("/{productId}")
-    public Product selectProduct(@PathVariable String productId){
-        return productService.selectProduct(productId);
-    }
 }

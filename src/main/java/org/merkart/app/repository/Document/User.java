@@ -3,6 +3,7 @@ package org.merkart.app.repository.Document;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,4 +18,5 @@ public abstract class User {
     private String phone;
     private String email;
     private String password;
+    private List<Invoice> invoices;
 }
