@@ -1,5 +1,7 @@
 package org.merkart.app.Service;
 
+import org.merkart.app.Controller.Dto.ProductDto;
+import org.merkart.app.Util.ProductMap;
 import org.merkart.app.repository.Document.Product;
 import org.merkart.app.repository.Document.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,10 @@ public class MongoProductService implements ProductService {
     public MongoProductService(@Autowired ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
-
+    @Override
+    public Product insertProduct(ProductDto productDto){
+        return productRepository.save(ProductMap.doProduct(productDto));
+    }
     @Override
     public Product findById(String id) {
         Optional<Product> optionalProduct = productRepository.findById(id);
