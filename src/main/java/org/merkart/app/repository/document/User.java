@@ -1,5 +1,7 @@
 package org.merkart.app.repository.document;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.merkart.app.controller.user.UserDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -11,6 +13,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+@Getter
+@Setter
 @Document
 public class User
 {
@@ -24,11 +28,17 @@ public class User
     @Indexed( unique = true )
     String email;
 
-    String passwordHash;
-
     List<RoleEnum> roles;
 
     Date createdAt;
+
+    private String typeOfId;
+    private String idNumber;
+
+    private String country;
+    private String phone;
+
+    private String password;
 
     public User()
     {
@@ -43,38 +53,11 @@ public class User
         createdAt = new Date();
         roles = new ArrayList<>( Collections.singleton( RoleEnum.USER ) );
         //TODO uncomment this line
-        passwordHash = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
+        password = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
     }
 
-    public String getId()
-    {
-        return id;
-    }
 
-    public String getName()
-    {
-        return name;
-    }
 
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public String getLastName()
-    {
-        return lastName;
-    }
-
-    public Date getCreatedAt()
-    {
-        return createdAt;
-    }
-
-    public String getPasswordHash()
-    {
-        return passwordHash;
-    }
 
     public List<RoleEnum> getRoles()
     {
@@ -89,7 +72,7 @@ public class User
         //TODO uncomment these lines
         if ( userDto.getPassword() != null )
         {
-            this.passwordHash = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
+            this.password = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
         }
     }
 }

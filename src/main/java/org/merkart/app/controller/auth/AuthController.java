@@ -39,7 +39,7 @@ public class AuthController
     public TokenDto login( @RequestBody LoginDto loginDto )
     {
         User user = userService.findByEmail( loginDto.email );
-        if ( BCrypt.checkpw( loginDto.password, user.getPasswordHash() ) )
+        if ( BCrypt.checkpw( loginDto.password, user.getPassword() ) )
         {
             return generateTokenDto( user );
         }
