@@ -1,4 +1,10 @@
 package org.merkart.app.repository.document;
 
-public class RoleEnum {
+
+public enum RoleEnum
+{
+    ADMIN,
+    USER,
+    CLIENT,
+    ARTISAN
 }
