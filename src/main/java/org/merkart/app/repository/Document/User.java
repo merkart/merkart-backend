@@ -9,7 +9,7 @@ import java.util.List;
 @Setter
 public abstract class User {
     @Id
-    private String id;
+    private String clientId;
     private String name;
     private String lastname;
     private String typeOfId;
