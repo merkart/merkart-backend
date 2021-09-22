@@ -26,5 +26,9 @@ public class ArtisanController {
     public Artisan getArtisanById(@PathVariable String artisanId){
         return artisanService.findById(artisanId);
     }
+    @GetMapping("/name/{artisanName}")
+    public Artisan getArtisanByName(@PathVariable String artisanName){
+        return artisanService.findByName(artisanName);
+    }
 
 }

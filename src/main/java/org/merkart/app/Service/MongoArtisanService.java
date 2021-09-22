@@ -28,6 +28,11 @@ public class MongoArtisanService implements ArtisanService {
         }
     }
     @Override
+    public Artisan findByName(String name) {
+        Artisan optionalArtisan = artisanRepository.findByname(name);
+        return optionalArtisan;
+    }
+    @Override
     public List<Artisan> all()
     {
         return new ArrayList<>(artisanRepository.findAll() );
