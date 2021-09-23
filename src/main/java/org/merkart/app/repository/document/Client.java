@@ -2,6 +2,7 @@ package org.merkart.app.repository.document;
 
 import lombok.Getter;
 import lombok.Setter;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
@@ -24,6 +25,7 @@ public class Client extends User {
         this.password =clientDto.getPassword();
         this.email = clientDto.getEmail();
         this.invoices = clientDto.getInvoices();
+
 
     }
 }
