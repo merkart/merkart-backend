@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 
+
 @Getter
 @Setter
 public class User {
@@ -19,6 +20,5 @@ public class User {
     protected String phone;
     protected String email;
     protected String password;
-
 
 }

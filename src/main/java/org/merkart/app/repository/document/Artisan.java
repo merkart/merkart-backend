@@ -3,6 +3,7 @@ package org.merkart.app.repository.document;
 import lombok.Getter;
 import lombok.Setter;
 
+
 import org.merkart.app.controller.Dto.ArtisanDto;
 
 import java.util.ArrayList;
@@ -10,18 +11,19 @@ import java.util.ArrayList;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
 import java.util.List;
 
 @Getter
 @Setter
 @Document
-
 public class Artisan extends User {
 
     private List<Product> productList;
 
     public Artisan() {
         super();
+
 
         this.productList = new ArrayList<>();
     }
@@ -37,6 +39,7 @@ public class Artisan extends User {
         this.password =artisanDto.getPassword();
         this.email = artisanDto.getEmail();
         this.productList = artisanDto.getProductList();
+
 
 
     }
