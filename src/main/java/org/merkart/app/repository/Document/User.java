@@ -6,15 +6,15 @@ import org.springframework.data.annotation.Id;
 
 @Getter
 @Setter
-public abstract class User {
+public class User {
     @Id
-    private String id;
-    private String name;
-    private String lastname;
-    private String typeOfId;
-    private String idNumber;
-    private String country;
-    private String phone;
-    private String email;
-    private String password;
+    protected String id;
+    protected String name;
+    protected String lastname;
+    protected String typeOfId;
+    protected String idNumber;
+    protected String country;
+    protected String phone;
+    protected String email;
+    protected String password;
 }

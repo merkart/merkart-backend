@@ -1,7 +1,7 @@
 package org.merkart.app.Service;
 
 import org.merkart.app.repository.Document.Product;
-import org.merkart.app.repository.Document.ProductRepository;
+import org.merkart.app.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
