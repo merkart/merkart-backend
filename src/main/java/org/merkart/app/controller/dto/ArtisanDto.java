@@ -8,15 +8,11 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ArtisanDto {
-    private String name;
-    private String lastname;
-    private String typeOfId;
-    private String idNumber;
-    private String country;
-    private String phone;
-    private String email;
-    private String password;
+public class ArtisanDto extends UserDto{
+
     private List<Product> productList;
 
+    public ArtisanDto() {
+        super();
+    }
 }
