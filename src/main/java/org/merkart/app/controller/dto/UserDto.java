@@ -2,7 +2,7 @@ package org.merkart.app.controller.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.merkart.app.repository.Document.Invoice;
+import org.merkart.app.repository.documents.Invoice;
 
 import java.util.List;
 

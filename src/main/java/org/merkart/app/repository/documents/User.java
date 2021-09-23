@@ -1,4 +1,4 @@
-package org.merkart.app.repository.document;
+package org.merkart.app.repository.documents;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +23,7 @@ public class User
 
     String name;
 
-    String lastName;
+    String lastname;
 
     @Indexed( unique = true )
     String email;
@@ -32,13 +32,14 @@ public class User
 
     Date createdAt;
 
-    private String typeOfId;
-    private String idNumber;
+    protected String typeOfId;
+    protected String idNumber;
 
-    private String country;
-    private String phone;
+    protected String country;
+    protected String phone;
 
-    private String password;
+    protected String password;
+    protected List<Invoice> invoices;
 
     public User()
     {
@@ -48,7 +49,7 @@ public class User
     public User( UserDto userDto )
     {
         name = userDto.getName();
-        lastName = userDto.getLastName();
+        lastname = userDto.getLastName();
         email = userDto.getEmail();
         createdAt = new Date();
         roles = new ArrayList<>( Collections.singleton( RoleEnum.USER ) );
@@ -67,7 +68,7 @@ public class User
     public void update( UserDto userDto )
     {
         this.name = userDto.getName();
-        this.lastName = userDto.getLastName();
+        this.lastname = userDto.getLastName();
         this.email = userDto.getEmail();
         //TODO uncomment these lines
         if ( userDto.getPassword() != null )

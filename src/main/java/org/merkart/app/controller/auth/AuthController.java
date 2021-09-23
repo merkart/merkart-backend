@@ -4,7 +4,7 @@ package org.merkart.app.controller.auth;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.merkart.app.exeption.InvalidCredentialsException;
-import org.merkart.app.repository.document.User;
+import org.merkart.app.repository.documents.User;
 import org.merkart.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

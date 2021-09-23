@@ -1,7 +1,7 @@
 package org.merkart.app.repository;
 
-import org.merkart.app.repository.Document.Invoice;
-import org.merkart.app.repository.document.User;
+import org.merkart.app.repository.documents.Invoice;
+import org.merkart.app.repository.documents.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

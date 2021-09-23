@@ -1,7 +1,7 @@
 package org.merkart.app.controller.user;
 
 
-import org.merkart.app.repository.document.User;
+import org.merkart.app.repository.documents.User;
 import org.merkart.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

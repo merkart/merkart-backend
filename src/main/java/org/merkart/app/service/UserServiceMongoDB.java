@@ -5,7 +5,7 @@ package org.merkart.app.service;
 import org.merkart.app.controller.user.UserDto;
 import org.merkart.app.exeption.UserNotFoundException;
 import org.merkart.app.repository.UserRepository;
-import org.merkart.app.repository.document.User;
+import org.merkart.app.repository.documents.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
