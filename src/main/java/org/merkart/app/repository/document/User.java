@@ -4,11 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+
 @Getter
 @Setter
 public class User {
     @Id
     protected String id;
+
     protected String name;
     protected String lastname;
     protected String typeOfId;
@@ -17,4 +19,6 @@ public class User {
     protected String phone;
     protected String email;
     protected String password;
+
+
 }

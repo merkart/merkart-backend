@@ -6,9 +6,12 @@ import org.merkart.app.controller.dto.ArtisanDto;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
+@Document
+
 public class Artisan extends User {
 
     private List<Product> productList;
