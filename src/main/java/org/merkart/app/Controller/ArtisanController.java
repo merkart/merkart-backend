@@ -30,5 +30,8 @@ public class ArtisanController {
     public Artisan getArtisanByName(@PathVariable String artisanName){
         return artisanService.findByName(artisanName);
     }
-
+    @GetMapping("/namecontains/{artisanName}")
+    public List<Artisan> getArtisanByNameContains(@PathVariable String artisanName){
+        return artisanService.findByNameContains(artisanName);
+    }
 }
