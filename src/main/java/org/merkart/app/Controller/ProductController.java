@@ -6,6 +6,8 @@ import org.merkart.app.repository.Document.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/product")
 public class ProductController {
@@ -20,6 +22,12 @@ public class ProductController {
     public  Product insertProduct(@RequestBody ProductDto productDto){
 
         return productService.insertProduct(productDto);
+    }
+    @GetMapping("/{MyProducts}")
+    public List<Product> getMyProducts()
+    {
+
+        return productService.allProducts();
     }
 
     @GetMapping("/{productId}")
