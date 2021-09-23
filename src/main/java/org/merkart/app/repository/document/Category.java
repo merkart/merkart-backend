@@ -7,17 +7,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Setter
-@Getter
 
+@Getter
+@Setter
 @Document
 public class Category {
-
     @Id
-    private String id;
-    private String name;
-    private String description;
-    private Date createdAt;
+    public String id;
+    public String name;
+    public String description;
+    public Date createdAt;
 
 
 }

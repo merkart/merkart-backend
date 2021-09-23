@@ -3,10 +3,14 @@ package org.merkart.app.repository.document;
 import lombok.Getter;
 import lombok.Setter;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
 import java.util.List;
 
 @Getter
 @Setter
+@Document
 public class Artisan extends User {
 
     private List<Product> productList;

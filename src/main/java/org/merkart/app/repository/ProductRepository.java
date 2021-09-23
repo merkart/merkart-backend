@@ -1,4 +1,4 @@
-package org.merkart.app.repository.Document;
+package org.merkart.app.repository;
 
 import org.merkart.app.repository.document.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
