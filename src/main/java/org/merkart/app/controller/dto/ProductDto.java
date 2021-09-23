@@ -1,15 +1,15 @@
-package org.merkart.app.Controller.Dto;
+package org.merkart.app.controller.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.merkart.app.repository.Document.Category;
+import org.merkart.app.repository.document.Category;
 
 import java.util.Date;
 @Setter
 @Getter
 public class ProductDto {
     private String name;
-    private String artisan;
+    private String artisanId;
     private String description;
     private int cost;
     private String placeOfCreation;

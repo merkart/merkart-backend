@@ -1,8 +1,8 @@
-package org.merkart.app.repository.Document;
+package org.merkart.app.repository.document;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.merkart.app.Controller.Dto.ProductDto;
+import org.merkart.app.controller.dto.ProductDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -27,7 +27,7 @@ public class Product {
 
     public Product(ProductDto productDto) {
         this.name= productDto.getName();
-        this.artisanId=productDto.getArtisan();
+        this.artisanId=productDto.getArtisanId();
         this.description=productDto.getDescription();
         this.quantity=productDto.getQuantity();
         this.cost=productDto.getCost();

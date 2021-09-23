@@ -1,11 +1,11 @@
-package org.merkart.app.Service;
+package org.merkart.app.service;
 
-import org.merkart.app.repository.Document.Product;
+import org.merkart.app.repository.document.Product;
 
 import java.util.List;
 
 public interface ArtisanService {
-    Product insertProduct(Product productDto);
+    Product insertProduct(String artisanId, Product productDto);
 
     List<Product> allProductByArtisanId(String artistanId);
 
@@ -13,7 +13,7 @@ public interface ArtisanService {
 
     Product updateProductById(String productId,Product productUpdate);
 
-    Product findById(String id);
+    Product findProductById(String productId, String id);
 
     Product selectProduct(String productId);
 }

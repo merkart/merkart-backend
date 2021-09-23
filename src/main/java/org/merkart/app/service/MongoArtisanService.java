@@ -1,7 +1,9 @@
-package org.merkart.app.Service;
+package org.merkart.app.service;
 
-import org.merkart.app.repository.Document.Product;
-import org.merkart.app.repository.Document.ProductRepository;
+import org.merkart.app.repository.ArtisanRepository;
+import org.merkart.app.repository.document.Artisan;
+import org.merkart.app.repository.document.Product;
+import org.merkart.app.repository.document.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,14 +13,24 @@ import java.util.Optional;
 @Service
 public class MongoArtisanService implements ArtisanService {
 
+    private final ArtisanRepository artisanRepository;
     private final ProductRepository productRepository;
 
-    public MongoArtisanService(@Autowired ProductRepository productRepository) {
+    public MongoArtisanService(@Autowired ProductRepository productRepository, @Autowired ArtisanRepository artisanRepository) {
         this.productRepository = productRepository;
+        this.artisanRepository = artisanRepository;
     }
     @Override
-    public Product insertProduct(Product product){
-        return productRepository.save(product);
+    public Product insertProduct(String artisanId, Product product){
+        Optional<Artisan> optionalArtisan = artisanRepository.findById(artisanId);
+        if (optionalArtisan.isPresent()){
+            Artisan artisan = optionalArtisan.get();
+            artisan.getProductList().add(product);
+            artisanRepository.save(artisan);
+            productRepository.save(product);
+            return product;
+        }
+        return null;
     }
 
     @Override
@@ -45,13 +57,8 @@ public class MongoArtisanService implements ArtisanService {
     }
 
     @Override
-    public Product findById(String id) {
-        Optional<Product> optionalProduct = productRepository.findById(id);
-        if(optionalProduct.isPresent()){
-            return optionalProduct.get();
-        }else {
-            throw new RuntimeException();
-        }
+    public Product findProductById(String productId, String artisanId) {
+        return productRepository.findProductByArtisanId(productId,artisanId);
     }
 
 

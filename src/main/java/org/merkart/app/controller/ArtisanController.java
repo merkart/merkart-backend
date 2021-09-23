@@ -1,15 +1,15 @@
-package org.merkart.app.Controller;
+package org.merkart.app.controller;
 
-import org.merkart.app.Controller.Dto.ProductDto;
-import org.merkart.app.Service.ArtisanService;
-import org.merkart.app.repository.Document.Product;
+import org.merkart.app.controller.dto.ProductDto;
+import org.merkart.app.service.ArtisanService;
+import org.merkart.app.repository.document.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/artisan")
 public class ArtisanController {
 
     private final ArtisanService artisanService;
@@ -18,26 +18,26 @@ public class ArtisanController {
 
         this.artisanService = artisanService;
     }
-    @PostMapping
-    public  Product insertProduct(@RequestBody ProductDto productDto){
+    @PostMapping("/{artisanId}")
+    public  Product insertProduct(@PathVariable String artisanId,@RequestBody ProductDto productDto){
 
-        return artisanService.insertProduct(new Product(productDto));
+        return artisanService.insertProduct(artisanId,new Product(productDto));
     }
     @GetMapping("/{MyProducts}")
-    public List<Product> getMyProducts(String artistanId)
+    public List<Product> getMyProducts(@PathVariable String artistanId)
     {
         return artisanService.allProductByArtisanId(artistanId);
     }
-    @GetMapping("/{MyProductsOrderByValue}")
-    public List<Product> getMyProductsOrderByValue(String artistanId)
+    @GetMapping("/orderedProducts/{artisanId}")
+    public List<Product> getMyProductsOrderByValue(@PathVariable String artistanId)
     {
         return artisanService.findProductsByArtisanIdOrderByCost(artistanId);
     }
 
-    @GetMapping("/{productId}")
-    public Product getProductById(@PathVariable String productId){
+    @GetMapping("/{artisanId}")
+    public Product getProductById( @RequestParam String productId, @PathVariable String artisanId){
 
-        return artisanService.findById(productId);
+        return artisanService.findProductById(productId,artisanId);
     }
 
     @PutMapping("/{productId}")
