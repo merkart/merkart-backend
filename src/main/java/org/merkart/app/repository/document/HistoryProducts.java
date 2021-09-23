@@ -1,10 +1,8 @@
-package org.merkart.app.repository.Document;
+package org.merkart.app.repository.document;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-
-import java.util.List;
 
 @Getter
 @Setter
