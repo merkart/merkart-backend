@@ -12,7 +12,7 @@ public class ProductMap {
     public static ProductDto doProductDTO(Product product){
         ProductDto newProductDto= new ProductDto();
         newProductDto.setName(product.getName());
-        newProductDto.setArtisan(product.getArtisan());
+        newProductDto.setArtisan(product.getArtisanId());
         newProductDto.setDescription(product.getDescription());
         newProductDto.setCost(product.getCost());
         newProductDto.setPlaceOfCreation(product.getPlaceOfCreation());
@@ -24,7 +24,7 @@ public class ProductMap {
         Product newProduct= new Product();
         newProduct.setId(newProduct.getId());
         newProduct.setName(productDto.getName());
-        newProduct.setArtisan(productDto.getArtisan());
+        newProduct.setArtisanId(productDto.getArtisan());
         newProduct.setDescription(productDto.getDescription());
         newProduct.setCost(productDto.getCost());
         newProduct.setPlaceOfCreation(productDto.getPlaceOfCreation());

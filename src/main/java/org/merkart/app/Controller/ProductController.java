@@ -28,7 +28,7 @@ public class ProductController {
     {
         return productService.allProductByArtisanId(artistanId);
     }
-    @GetMapping("/{MyProducts}")
+    @GetMapping("/{MyProductsOrderByValue}")
     public List<Product> getMyProductsOrderByValue(String artistanId)
     {
         return productService.findProductsByArtisanIdOrderByCost(artistanId);
