@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import java.util.List;
 
 
+
 @Getter
 @Setter
 public class User {
@@ -22,6 +23,5 @@ public class User {
     protected String email;
     protected String password;
     protected List<Invoice> invoices;
-
 
 }

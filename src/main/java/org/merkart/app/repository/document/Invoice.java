@@ -5,7 +5,9 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 
+
 import org.springframework.data.mongodb.core.mapping.Document;
+
 
 
 import java.util.Date;
@@ -14,6 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @Document
+
 public class Invoice {
 
     @Id
@@ -21,6 +24,7 @@ public class Invoice {
     private String clientId;
     private Date currentDate;
     private List<Product> shoppingCart;
+
     private double total;
 
     public Invoice(String clientId, List<Product> products) {
@@ -37,6 +41,7 @@ public class Invoice {
         }
         return subtotal;
     }
+
 
 
 }
