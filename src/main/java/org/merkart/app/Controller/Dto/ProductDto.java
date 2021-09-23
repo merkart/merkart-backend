@@ -2,6 +2,7 @@ package org.merkart.app.Controller.Dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.merkart.app.repository.Document.Category;
 
 import java.util.Date;
 @Setter
@@ -14,4 +15,7 @@ public class ProductDto {
     private String placeOfCreation;
     private Date createdAt;
     private boolean isSelected;
+    private int quantity;
+    private Category Category;
+
 }
