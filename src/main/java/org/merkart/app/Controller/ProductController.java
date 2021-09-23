@@ -22,7 +22,10 @@ public class ProductController {
     public ProductController(@Autowired ProductService productService) {
         this.productService = productService;
     }
-
+    @GetMapping("/name/{productName}")
+    public Product getProductByName(@PathVariable String productName){
+        return productService.findByName(productName);
+    }
     @GetMapping("/{productId}")
     public Product getProductById(@PathVariable String productId){
         return productService.findById(productId);

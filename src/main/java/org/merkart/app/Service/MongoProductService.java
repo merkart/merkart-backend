@@ -23,7 +23,11 @@ public class MongoProductService implements ProductService {
     {
         return new ArrayList<>( productRepository.findAll() );
     }
-
+    @Override
+    public Product findByName(String name) {
+        Product optionalProduct = productRepository.findByname(name);
+        return optionalProduct;
+    }
     @Override
     public Product findById(String id) {
         Optional<Product> optionalProduct = productRepository.findById(id);
