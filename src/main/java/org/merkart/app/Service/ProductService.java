@@ -10,6 +10,8 @@ public interface ProductService{
 
     List<Product> allProductByArtisanId(String artistanId);
 
+    List<Product> findProductsByArtisanIdOrderByCost(String artistanId);
+
     Product findById(String id);
 
     Product selectProduct(String productId);

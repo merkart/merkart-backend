@@ -28,6 +28,11 @@ public class ProductController {
     {
         return productService.allProductByArtisanId(artistanId);
     }
+    @GetMapping("/{MyProducts}")
+    public List<Product> getMyProductsOrderByValue(String artistanId)
+    {
+        return productService.findProductsByArtisanIdOrderByCost(artistanId);
+    }
 
     @GetMapping("/{productId}")
     public Product getProductById(@PathVariable String productId){

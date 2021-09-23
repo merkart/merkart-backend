@@ -28,7 +28,11 @@ public class MongoProductService implements ProductService {
 
         return productRepository.findProductsByArtisanId(artistanId);
     }
-    
+    @Override
+    public List<Product> findProductsByArtisanIdOrderByCost(String artistanId){
+
+        return productRepository.findProductsByArtisanIdOrderByCost(artistanId);
+    }
 
     @Override
     public Product findById(String id) {
