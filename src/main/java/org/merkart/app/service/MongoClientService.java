@@ -1,9 +1,9 @@
 package org.merkart.app.service;
 
-import org.merkart.app.repository.document.Client;
-import org.merkart.app.repository.document.Invoice;
-import org.merkart.app.repository.document.Product;
-import org.merkart.app.repository.document.User;
+import org.merkart.app.repository.Document.Client;
+import org.merkart.app.repository.Document.Invoice;
+import org.merkart.app.repository.Document.Product;
+import org.merkart.app.repository.Document.User;
 import org.merkart.app.repository.ProductRepository;
 import org.merkart.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class MongoClientService implements ClientService {
 
     @Override
     public List<Invoice> getPurchasedProducts(String clientId) {
-        return userRepository.findInvoicesByClientId(clientId);
+        return userRepository.findInvoicesById(clientId);
     }
 
     @Override

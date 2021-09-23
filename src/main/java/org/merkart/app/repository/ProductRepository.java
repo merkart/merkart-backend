@@ -1,10 +1,9 @@
 package org.merkart.app.repository;
 
 
-import org.merkart.app.repository.document.Product;
+import org.merkart.app.repository.Document.Product;
 
 
-import org.merkart.app.repository.document.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

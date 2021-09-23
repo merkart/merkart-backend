@@ -1,4 +1,4 @@
-package org.merkart.app.repository.document;
+package org.merkart.app.repository.Document;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 import java.util.List;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter

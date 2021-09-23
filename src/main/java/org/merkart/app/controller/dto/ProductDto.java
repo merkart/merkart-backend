@@ -2,7 +2,7 @@ package org.merkart.app.controller.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.merkart.app.repository.document.Category;
+import org.merkart.app.repository.Document.Category;
 import java.util.Date;
 
 @Getter
