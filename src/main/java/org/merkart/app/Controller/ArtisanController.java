@@ -3,6 +3,7 @@ package org.merkart.app.Controller;
 import org.merkart.app.Controller.Dto.ArtisanDto;
 import org.merkart.app.Controller.Dto.ProductDto;
 import org.merkart.app.Service.ArtisanService;
+import org.merkart.app.Service.ProductService;
 import org.merkart.app.repository.Document.Artisan;
 import org.merkart.app.repository.Document.Product;
 import org.springframework.beans.factory.annotation.Autowired;
