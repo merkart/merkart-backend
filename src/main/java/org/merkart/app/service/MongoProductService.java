@@ -1,10 +1,11 @@
 package org.merkart.app.service;
 
 import org.merkart.app.repository.document.Product;
-import org.merkart.app.repository.Document.ProductRepository;
+import org.merkart.app.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -35,5 +36,15 @@ public class MongoProductService implements ProductService {
             return product;
         }
         return null;
+    }
+
+    @Override
+    public List<Product> getAll() {
+        return productRepository.findAll();
+    }
+
+    @Override
+    public List<Product> getProductsByCategory(String categoryId) {
+        return productRepository.findByCategory(categoryId);
     }
 }
