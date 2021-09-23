@@ -1,4 +1,4 @@
-package org.merkart.app.repository.document;
+package org.merkart.app.repository.Document;
 
 import lombok.Getter;
 import lombok.Setter;

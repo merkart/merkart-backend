@@ -2,7 +2,7 @@ package org.merkart.app.service;
 
 import org.merkart.app.controller.dto.CategoryDto;
 import org.merkart.app.exception.NotFoundException;
-import org.merkart.app.repository.document.Category;
+import org.merkart.app.repository.Document.Category;
 
 public interface CategoryService {
 

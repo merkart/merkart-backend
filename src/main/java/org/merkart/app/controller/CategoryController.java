@@ -1,9 +1,8 @@
 package org.merkart.app.controller;
 
 import org.merkart.app.controller.dto.CategoryDto;
-import org.merkart.app.repository.document.Category;
+import org.merkart.app.repository.Document.Category;
 import org.merkart.app.service.CategoryService;
-import org.merkart.app.util.CategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

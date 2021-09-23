@@ -1,7 +1,7 @@
 package org.merkart.app.util;
 
 import org.merkart.app.controller.dto.CategoryDto;
-import org.merkart.app.repository.document.Category;
+import org.merkart.app.repository.Document.Category;
 
 public class CategoryMapper {
 

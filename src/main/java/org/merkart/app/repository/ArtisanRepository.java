@@ -1,6 +1,6 @@
 package org.merkart.app.repository;
 
-import org.merkart.app.repository.document.Artisan;
+import org.merkart.app.repository.Document.Artisan;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
