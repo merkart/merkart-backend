@@ -1,17 +1,21 @@
 package org.merkart.app.controller.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.merkart.app.repository.document.Invoice;
 
 import java.util.List;
 
+@Getter
+@Setter
 public class UserDto {
-    protected String name;
-    protected String lastname;
-    protected String typeOfId;
-    protected String idNumber;
-    protected String country;
-    protected String phone;
-    protected String email;
-    protected String password;
-    protected List<Invoice> invoices;
+    private String name;
+    private String lastname;
+    private String typeOfId;
+    private String idNumber;
+    private String country;
+    private String phone;
+    private String email;
+    private String password;
+    private List<Invoice> invoices;
 }

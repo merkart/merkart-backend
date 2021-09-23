@@ -15,11 +15,7 @@ import java.util.List;
 
 @Getter
 @Setter
-
-
-
 @Document
-
 
 public class Invoice {
 
@@ -29,21 +25,13 @@ public class Invoice {
     private Date currentDate;
     private List<Product> shoppingCart;
 
-
-    private int subtotal;
-    private int iva;
-    private int total;
-
-
     private double total;
-
 
     public Invoice(String clientId, List<Product> products) {
         this.clientId = clientId;
         this.currentDate = new Date();
         this.shoppingCart = products;
         this.total = calculateTotal(products);
-
     }
 
     private int calculateTotal(List<Product> products){

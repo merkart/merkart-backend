@@ -1,7 +1,7 @@
 package org.merkart.app.controller;
 
-import org.merkart.app.controller.Dto.ArtisanDto;
-import org.merkart.app.controller.Dto.ProductDto;
+import org.merkart.app.controller.dto.ArtisanDto;
+import org.merkart.app.controller.dto.ProductDto;
 import org.merkart.app.service.ArtisanService;
 import org.merkart.app.repository.document.Artisan;
 import org.merkart.app.repository.document.Product;
