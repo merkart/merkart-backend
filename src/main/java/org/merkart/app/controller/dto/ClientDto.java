@@ -1,9 +1,7 @@
-package org.merkart.app.Controller.Dto;
+package org.merkart.app.controller.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.ArrayList;
 
 @Getter
 @Setter

@@ -1,10 +1,9 @@
-package org.merkart.app.Controller;
+package org.merkart.app.controller;
 
-import org.merkart.app.Controller.Dto.ClientDto;
-import org.merkart.app.Service.ClientService;
-import org.merkart.app.repository.Document.Client;
-import org.merkart.app.repository.Document.Invoice;
-import org.merkart.app.repository.Document.Product;
+import org.merkart.app.service.ClientService;
+import org.merkart.app.repository.document.Client;
+import org.merkart.app.repository.document.Invoice;
+import org.merkart.app.repository.document.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,15 +1,10 @@
-package org.merkart.app.repository.Document;
+package org.merkart.app.controller.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
+import org.merkart.app.repository.document.Invoice;
+
 import java.util.List;
 
-@Getter
-@Setter
-public abstract class User {
-    @Id
-    private String clientId;
+public class UserDto {
     protected String name;
     protected String lastname;
     protected String typeOfId;

@@ -1,7 +1,6 @@
-package org.merkart.app.Controller;
+package org.merkart.app.controller;
 
-import org.merkart.app.Service.ProductService;
-import org.merkart.app.repository.Document.Product;
+import org.merkart.app.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +13,4 @@ public class ProductController {
     public ProductController(@Autowired ProductService productService) {
         this.productService = productService;
     }
-
-
 }

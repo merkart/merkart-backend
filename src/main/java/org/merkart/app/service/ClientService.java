@@ -1,8 +1,8 @@
-package org.merkart.app.Service;
+package org.merkart.app.service;
 
-import org.merkart.app.repository.Document.Client;
-import org.merkart.app.repository.Document.Invoice;
-import org.merkart.app.repository.Document.Product;
+import org.merkart.app.repository.document.Client;
+import org.merkart.app.repository.document.Invoice;
+import org.merkart.app.repository.document.Product;
 
 import java.util.List;
 
