@@ -1,9 +1,9 @@
 package org.merkart.app.service;
 
-import org.merkart.app.repository.Document.Client;
-import org.merkart.app.repository.Document.Invoice;
-import org.merkart.app.repository.Document.Product;
-import org.merkart.app.repository.Document.User;
+import org.merkart.app.repository.documents.Client;
+import org.merkart.app.repository.documents.Invoice;
+import org.merkart.app.repository.documents.Product;
+import org.merkart.app.repository.documents.User;
 import org.merkart.app.repository.ProductRepository;
 import org.merkart.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

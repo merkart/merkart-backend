@@ -1,4 +1,4 @@
-package org.merkart.app.repository.Document;
+package org.merkart.app.repository.documents;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +13,6 @@ import java.util.Date;
 @Getter
 @Setter
 @Document
-
 public class Product {
 
     @Id

@@ -1,8 +1,8 @@
 package org.merkart.app.service;
 
 import org.merkart.app.repository.ArtisanRepository;
-import org.merkart.app.repository.Document.Artisan;
-import org.merkart.app.repository.Document.Product;
+import org.merkart.app.repository.documents.Artisan;
+import org.merkart.app.repository.documents.Product;
 import org.merkart.app.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
