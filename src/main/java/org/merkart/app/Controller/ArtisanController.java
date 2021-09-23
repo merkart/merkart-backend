@@ -1,4 +1,6 @@
 package org.merkart.app.Controller;
+import org.merkart.app.Controller.Dto.ArtisanDto;
+import org.merkart.app.Controller.Dto.UserDto;
 import org.merkart.app.Service.ArtisanService;
 import org.merkart.app.Service.ProductService;
 import org.merkart.app.repository.Document.Artisan;
@@ -21,6 +23,10 @@ public class ArtisanController {
     public ResponseEntity<List<Artisan>> all()
     {
         return ResponseEntity.ok( artisanService.all() );
+    }
+    @PostMapping
+    public ResponseEntity<Artisan> insertArtisan(@RequestBody ArtisanDto artisanDto){
+        return ResponseEntity.ok(artisanService.insertArtisan(new Artisan(artisanDto)));
     }
     @GetMapping("/{artisanId}")
     public Artisan getArtisanById(@PathVariable String artisanId){

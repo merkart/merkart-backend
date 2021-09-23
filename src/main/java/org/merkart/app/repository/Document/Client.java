@@ -2,6 +2,7 @@ package org.merkart.app.repository.Document;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.merkart.app.Controller.Dto.UserDto;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class Client extends User {
 
     private List<HistoryProducts> historyProducts;
 
-    public Client() {
-        super();
+    public Client(UserDto userDto) {
+        super(userDto);
     }
 }

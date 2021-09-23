@@ -33,12 +33,16 @@ public class MongoArtisanService implements ArtisanService {
     }
     @Override
     public Artisan findByName(String name) {
-        Artisan optionalArtisan = artisanRepository.findByname(name);
-        return optionalArtisan;
+        return artisanRepository.findByname(name);
     }
     @Override
     public List<Artisan> all()
     {
         return new ArrayList<>(artisanRepository.findAll() );
+    }
+
+    @Override
+    public Artisan insertArtisan(Artisan artisan) {
+        return artisanRepository.save(artisan);
     }
 }

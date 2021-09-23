@@ -9,4 +9,5 @@ public interface ArtisanService {
     Artisan findByName(String name);
     List<Artisan> findByNameContains(String name);
     List<Artisan> all();
+    Artisan insertArtisan(Artisan artisan);
 }
