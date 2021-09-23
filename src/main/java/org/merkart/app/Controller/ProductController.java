@@ -24,10 +24,9 @@ public class ProductController {
         return productService.insertProduct(productDto);
     }
     @GetMapping("/{MyProducts}")
-    public List<Product> getMyProducts()
+    public List<Product> getMyProducts(String artistanId)
     {
-
-        return productService.allProducts();
+        return productService.allProductByArtisanId(artistanId);
     }
 
     @GetMapping("/{productId}")

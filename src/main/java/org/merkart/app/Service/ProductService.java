@@ -8,7 +8,7 @@ import java.util.List;
 public interface ProductService{
     Product insertProduct(ProductDto productDto);
 
-    List<Product> allProducts();
+    List<Product> allProductByArtisanId(String artistanId);
 
     Product findById(String id);
 
