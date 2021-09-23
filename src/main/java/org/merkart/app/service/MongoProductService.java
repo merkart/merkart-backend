@@ -21,9 +21,10 @@ public class MongoProductService implements ProductService {
     @Override
     public Product findById(String id) {
         Optional<Product> optionalProduct = productRepository.findById(id);
-        if (optionalProduct.isPresent()) {
+
+        if(optionalProduct.isPresent()){
             return optionalProduct.get();
-        } else {
+        }else {
 
             throw new RuntimeException();
         }
@@ -32,7 +33,7 @@ public class MongoProductService implements ProductService {
     @Override
     public Product selectProduct(String productId) {
 
-        if (productRepository.existsById(productId)) {
+        if(productRepository.existsById(productId)){
 
             Product product = productRepository.findById(productId).get();
             product.setSelected(true);
@@ -41,7 +42,5 @@ public class MongoProductService implements ProductService {
         }
         return null;
     }
-
-
 
 }
