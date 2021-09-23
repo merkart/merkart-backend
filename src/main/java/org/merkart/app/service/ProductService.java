@@ -1,4 +1,4 @@
-package org.merkart.app.Service;
+package org.merkart.app.service;
 
 import org.merkart.app.repository.Document.Product;
 
