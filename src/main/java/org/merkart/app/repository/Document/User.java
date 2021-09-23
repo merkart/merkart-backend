@@ -10,13 +10,13 @@ import java.util.List;
 public abstract class User {
     @Id
     private String clientId;
-    private String name;
-    private String lastname;
-    private String typeOfId;
-    private String idNumber;
-    private String country;
-    private String phone;
-    private String email;
-    private String password;
-    private List<Invoice> invoices;
+    protected String name;
+    protected String lastname;
+    protected String typeOfId;
+    protected String idNumber;
+    protected String country;
+    protected String phone;
+    protected String email;
+    protected String password;
+    protected List<Invoice> invoices;
 }

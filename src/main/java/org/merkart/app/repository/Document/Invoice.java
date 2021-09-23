@@ -20,7 +20,8 @@ public class Invoice {
     private List<Product> shoppingCart;
     private double total;
 
-    public Invoice(String clientId,List<Product> products) {
+
+    public Invoice(String clientId, List<Product> products) {
         this.clientId = clientId;
         this.currentDate = new Date();
         this.shoppingCart = products;

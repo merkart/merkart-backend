@@ -1,5 +1,6 @@
 package org.merkart.app.Service;
 
+import org.merkart.app.repository.Document.Client;
 import org.merkart.app.repository.Document.Invoice;
 import org.merkart.app.repository.Document.Product;
 import org.merkart.app.repository.Document.User;
@@ -12,12 +13,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MongoUserService implements UserService {
+public class MongoClientService implements ClientService {
 
     private final UserRepository userRepository;
     private final ProductRepository productRepository;
 
-    public MongoUserService(@Autowired UserRepository userRepository, @Autowired ProductRepository productRepository) {
+    public MongoClientService(@Autowired UserRepository userRepository, @Autowired ProductRepository productRepository) {
         this.userRepository = userRepository;
         this.productRepository = productRepository;
     }
@@ -48,6 +49,11 @@ public class MongoUserService implements UserService {
         }else {
             throw new RuntimeException();
         }
+    }
+
+    @Override
+    public Client createClient(Client client) {
+        return userRepository.save(client);
     }
 
     private void updateQuantityProducts(List<Product> products) {
