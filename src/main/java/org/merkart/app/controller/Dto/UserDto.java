@@ -1,4 +1,4 @@
-package org.merkart.app.Controller.Dto;
+package org.merkart.app.controller.Dto;
 
 import lombok.Getter;
 import lombok.Setter;

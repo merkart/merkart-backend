@@ -1,8 +1,8 @@
-package org.merkart.app.Controller.Dto;
+package org.merkart.app.controller.Dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.merkart.app.repository.Document.Product;
+import org.merkart.app.repository.document.Product;
 
 import java.util.List;
 

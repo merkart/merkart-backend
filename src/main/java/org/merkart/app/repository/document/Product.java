@@ -1,8 +1,8 @@
-package org.merkart.app.repository.Document;
+package org.merkart.app.repository.document;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.merkart.app.Controller.Dto.ProductDto;
+import org.merkart.app.controller.Dto.ProductDto;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;
