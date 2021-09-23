@@ -47,4 +47,18 @@ public class ProductController {
         return productService.selectProduct(productId);
     }
 
+
+ 
+
+    @GetMapping("/category/{id}")
+    public ResponseEntity<List<?>> getProductsByCategory(@PathVariable String id) {
+        try {
+            return ResponseEntity.ok()
+                    .body(productService.getProductsByCategory(id));
+        } catch (Exception ex) {
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+
+
 }
