@@ -29,6 +29,10 @@ public class MongoProductService implements ProductService {
         return optionalProduct;
     }
     @Override
+    public List<Product> findByNameContains(String name) {
+        return new ArrayList<>(productRepository.findByNameContains(name));
+    }
+    @Override
     public Product findById(String id) {
         Optional<Product> optionalProduct = productRepository.findById(id);
         if(optionalProduct.isPresent()){
