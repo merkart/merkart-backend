@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 public class UserDto {
     private String name;
-    private String lastname;
+    private String lastName;
     private String typeOfId;
     private String idNumber;
     private String country;

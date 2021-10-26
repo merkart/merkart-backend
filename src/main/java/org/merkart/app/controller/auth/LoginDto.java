@@ -1,10 +1,13 @@
 package org.merkart.app.controller.auth;
 
+import lombok.Getter;
+
+@Getter
 public class LoginDto
 {
-    String email;
+    private String email;
 
-    String password;
+    private String password;
 
     public LoginDto( String email, String password )
     {
@@ -12,13 +15,4 @@ public class LoginDto
         this.password = password;
     }
 
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public String getPassword()
-    {
-        return password;
-    }
 }

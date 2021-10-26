@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.merkart.app.repository.documents.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -14,5 +15,6 @@ public class ArtisanDto extends UserDto{
 
     public ArtisanDto() {
         super();
+        productList = new ArrayList<Product>();
     }
 }

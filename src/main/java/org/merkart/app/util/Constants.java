@@ -1,4 +1,4 @@
-package org.merkart.app.utils;
+package org.merkart.app.util;
 
 import ch.qos.logback.core.net.server.Client;
 

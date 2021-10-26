@@ -1,14 +1,16 @@
 package org.merkart.app.controller.auth;
 
-
 import java.util.Date;
 
+import lombok.Getter;
+
+@Getter
 public class TokenDto
 {
 
-    String token;
+    private String token;
 
-    Date expirationDate;
+    private Date expirationDate;
 
     public TokenDto( String token, Date expirationDate )
     {
@@ -16,13 +18,4 @@ public class TokenDto
         this.expirationDate = expirationDate;
     }
 
-    public String getToken()
-    {
-        return token;
-    }
-
-    public Date getExpirationDate()
-    {
-        return expirationDate;
-    }
 }

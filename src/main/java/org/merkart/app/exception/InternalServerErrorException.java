@@ -1,15 +1,18 @@
-package org.merkart.app.error;
+package org.merkart.app.exception;
 
 
 
-import org.merkart.app.exeption.ServerErrorResponseDto;
 import org.springframework.http.HttpStatus;
 
-public class InternalServerErrorException
-        extends RuntimeException
-{
+public class InternalServerErrorException extends RuntimeException {
 
-    private final ServerErrorResponseDto serverErrorResponseDto;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+	private final ServerErrorResponseDto serverErrorResponseDto;
 
 
     private final HttpStatus httpStatus;

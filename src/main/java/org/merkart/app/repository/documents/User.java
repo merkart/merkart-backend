@@ -19,41 +19,38 @@ import java.util.List;
 public class User
 {
     @Id
-    String id;
+    private String id;
 
-    String name;
+    private String name;
 
-    String lastname;
+    private String lastName;
 
     @Indexed( unique = true )
-    String email;
+    private String email;
 
-    List<RoleEnum> roles;
+    private List<RoleEnum> roles;
 
-    Date createdAt;
+    private Date createdAt;
 
-    protected String typeOfId;
-    protected String idNumber;
+    private String typeOfId;
+    private String idNumber;
 
-    protected String country;
-    protected String phone;
+    private String country;
+    private String phone;
 
-    protected String password;
-    protected List<Invoice> invoices;
+    private String password;
+    private List<Invoice> invoices;
 
-    public User()
-    {
-    }
-
+    
+    public User() {}
 
     public User( UserDto userDto )
     {
         name = userDto.getName();
-        lastname = userDto.getLastName();
+        lastName = userDto.getLastName();
         email = userDto.getEmail();
         createdAt = new Date();
         roles = new ArrayList<>( Collections.singleton( RoleEnum.USER ) );
-        //TODO uncomment this line
         password = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
     }
 
@@ -68,9 +65,8 @@ public class User
     public void update( UserDto userDto )
     {
         this.name = userDto.getName();
-        this.lastname = userDto.getLastName();
+        this.lastName = userDto.getLastName();
         this.email = userDto.getEmail();
-        //TODO uncomment these lines
         if ( userDto.getPassword() != null )
         {
             this.password = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );

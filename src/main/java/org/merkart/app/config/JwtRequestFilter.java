@@ -25,17 +25,17 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-import static org.merkart.app.utils.Constants.CLAIMS_ROLES_KEY;
-import static org.merkart.app.utils.Constants.COOKIE_NAME;
+import static org.merkart.app.util.Constants.CLAIMS_ROLES_KEY;
+import static org.merkart.app.util.Constants.COOKIE_NAME;
 
 @Component
-public class JWTRequestFilter
+public class JwtRequestFilter
         extends OncePerRequestFilter
 {
     @Value( "${app.secret}" )
     String secret;
 
-    public JWTRequestFilter()
+    public JwtRequestFilter()
     {
     }
 

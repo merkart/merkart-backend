@@ -1,8 +1,7 @@
-package org.merkart.app.exeption;
+package org.merkart.app.exception;
 
 
 import org.merkart.app.error.ErrorCodeEnum;
-import org.merkart.app.error.InternalServerErrorException;
 import org.springframework.http.HttpStatus;
 
 public class UserNotFoundException

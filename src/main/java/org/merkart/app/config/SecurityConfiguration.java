@@ -15,9 +15,9 @@ public class SecurityConfiguration
         extends WebSecurityConfigurerAdapter
 {
 
-    JWTRequestFilter jwtRequestFilter;
+    JwtRequestFilter jwtRequestFilter;
 
-    public SecurityConfiguration( @Autowired JWTRequestFilter jwtRequestFilter )
+    public SecurityConfiguration( @Autowired JwtRequestFilter jwtRequestFilter )
     {
         this.jwtRequestFilter = jwtRequestFilter;
     }

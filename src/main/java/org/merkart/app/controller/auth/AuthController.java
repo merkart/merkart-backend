@@ -1,9 +1,9 @@
 package org.merkart.app.controller.auth;
-;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.merkart.app.exeption.InvalidCredentialsException;
+
+import org.merkart.app.exception.InvalidCredentialsException;
 import org.merkart.app.repository.documents.User;
 import org.merkart.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Calendar;
 import java.util.Date;
 
-import static org.merkart.app.utils.Constants.CLAIMS_ROLES_KEY;
-import static org.merkart.app.utils.Constants.TOKEN_DURATION_MINUTES;
+import static org.merkart.app.util.Constants.CLAIMS_ROLES_KEY;
+import static org.merkart.app.util.Constants.TOKEN_DURATION_MINUTES;
 
 @RestController
 @RequestMapping( "v1/auth" )
@@ -38,8 +38,8 @@ public class AuthController
     @PostMapping
     public TokenDto login( @RequestBody LoginDto loginDto )
     {
-        User user = userService.findByEmail( loginDto.email );
-        if ( BCrypt.checkpw( loginDto.password, user.getPassword() ) )
+        User user = userService.findByEmail( loginDto.getEmail() );
+        if ( BCrypt.checkpw( loginDto.getPassword(), user.getPassword() ) )
         {
             return generateTokenDto( user );
         }

@@ -2,7 +2,7 @@ package org.merkart.app.service;
 
 import org.merkart.app.controller.dto.CategoryDto;
 import org.merkart.app.exception.NotFoundException;
-import org.merkart.app.repository.MongoCategoryRepository;
+import org.merkart.app.repository.CategoryRepository;
 import org.merkart.app.repository.documents.Category;
 import org.merkart.app.util.CategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +12,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class MongoCategoryService implements CategoryService{
 
-    private MongoCategoryRepository categoryRepository;
+    private CategoryRepository categoryRepository;
 
     @Autowired
-    public MongoCategoryService(@Qualifier("Mongo") MongoCategoryRepository categoryRepository) {
+    public MongoCategoryService(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 

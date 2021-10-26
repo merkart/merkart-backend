@@ -31,7 +31,7 @@ public class MongoProductService implements ProductService {
     }
     @Override
     public Product findByName(String name) {
-        Product optionalProduct = productRepository.findByname(name);
+        Product optionalProduct = productRepository.findByName(name);
         return optionalProduct;
     }
     @Override

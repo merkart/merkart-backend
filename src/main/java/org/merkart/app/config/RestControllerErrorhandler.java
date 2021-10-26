@@ -1,7 +1,7 @@
 package org.merkart.app.config;
 
-import org.merkart.app.error.InternalServerErrorException;
-import org.merkart.app.exeption.ServerErrorResponseDto;
+import org.merkart.app.exception.InternalServerErrorException;
+import org.merkart.app.exception.ServerErrorResponseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;

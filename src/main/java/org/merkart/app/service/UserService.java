@@ -2,7 +2,7 @@ package org.merkart.app.service;
 
 
 import org.merkart.app.controller.user.UserDto;
-import org.merkart.app.exeption.UserNotFoundException;
+import org.merkart.app.exception.UserNotFoundException;
 import org.merkart.app.repository.documents.User;
 
 import java.util.List;

@@ -3,8 +3,6 @@ package org.merkart.app.repository.documents;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
 import org.merkart.app.controller.dto.ArtisanDto;
 
 import java.util.ArrayList;
@@ -30,14 +28,14 @@ public class Artisan extends User {
 
     public Artisan(ArtisanDto artisanDto) {
         super();
-        this.name = artisanDto.getName();
-        this.lastname = artisanDto.getLastname();
-        this.idNumber = artisanDto.getIdNumber();
-        this.typeOfId = artisanDto.getTypeOfId();
-        this.phone = artisanDto.getPhone();
-        this.country = artisanDto.getCountry();
-        this.password =artisanDto.getPassword();
-        this.email = artisanDto.getEmail();
+        setName(artisanDto.getName());
+        setLastName(artisanDto.getLastName());
+        setIdNumber(artisanDto.getIdNumber());
+        setTypeOfId(artisanDto.getTypeOfId());
+        setPhone(artisanDto.getPhone());
+        setCountry(artisanDto.getCountry());
+        setPassword(artisanDto.getPassword());
+        setEmail(artisanDto.getEmail());
         this.productList = artisanDto.getProductList();
 
 

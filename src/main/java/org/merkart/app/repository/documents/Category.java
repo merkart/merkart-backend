@@ -15,10 +15,10 @@ import java.util.Date;
 @Document
 public class Category {
     @Id
-    public String id;
-    public String name;
-    public String description;
-    public Date createdAt;
+    private String id;
+    private String name;
+    private String description;
+    private Date createdAt;
 
 
 }

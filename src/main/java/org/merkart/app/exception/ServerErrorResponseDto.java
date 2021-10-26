@@ -1,4 +1,4 @@
-package org.merkart.app.exeption;
+package org.merkart.app.exception;
 
 
 import org.merkart.app.error.ErrorCodeEnum;
