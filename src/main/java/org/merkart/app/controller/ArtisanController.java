@@ -32,7 +32,7 @@ public class ArtisanController {
     public Artisan getArtisanByName(@PathVariable String artisanName){
         return artisanService.findByName(artisanName);
     }
-    @GetMapping("/namecontains/{artisanName}")
+    @GetMapping("/name/search/{artisanName}")
     public List<Artisan> getArtisanByNameContains(@PathVariable String artisanName){
         return artisanService.findByNameContains(artisanName);
     }
@@ -42,31 +42,31 @@ public class ArtisanController {
         return ResponseEntity.ok(artisanService.create(new Artisan(artisanDto)));
     }
 
-    @PostMapping("/insertproduct/{artisanId}")
+    @PostMapping("/product/insert/{artisanId}")
     public  Product insertProduct(@PathVariable String artisanId,@RequestBody ProductDto productDto){
 
         return artisanService.insertProduct(artisanId,new Product(productDto));
     }
 
-    @GetMapping("/myProducts/{artisanId}")
+    @GetMapping("/product/all/{artisanId}")
     public List<Product> getMyProducts(@PathVariable String artisanId)
     {
         return artisanService.allProductsByArtisanId(artisanId);
     }
 
-    @GetMapping("/orderedProductsByCost/{artisanId}")
+    @GetMapping("/product/all/{artisanId}/cost-order")
     public List<Product> getMyProductsOrderByValue(@PathVariable String artisanId)
     {
         return artisanService.findProductsByArtisanIdOrderByCost(artisanId);
     }
 
-    @GetMapping("/myProduct/{artisanId}")
-    public Product getProductById( @RequestParam String productId, @PathVariable String artisanId){
+    @GetMapping("/product/{artisanId}/{productId}")
+    public Product getProductById( @PathVariable String productId, @PathVariable String artisanId){
 
         return artisanService.findProductById(productId,artisanId);
     }
 
-    @PutMapping("/{productId}")
+    @PutMapping("/product/{productId}")
     public Product selectProduct(@PathVariable String productId){
 
         return artisanService.selectProduct(productId);

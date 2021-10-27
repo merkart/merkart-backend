@@ -2,7 +2,7 @@ package org.merkart.app.repository.documents;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.merkart.app.controller.user.UserDto;
+import org.merkart.app.controller.dto.UserDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
