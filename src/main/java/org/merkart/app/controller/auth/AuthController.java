@@ -3,8 +3,6 @@ package org.merkart.app.controller.auth;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-import org.merkart.app.controller.dto.auth.LoginDto;
-import org.merkart.app.controller.dto.auth.TokenDto;
 import org.merkart.app.exception.InvalidCredentialsException;
 import org.merkart.app.repository.documents.User;
 import org.merkart.app.service.UserService;
@@ -23,7 +21,7 @@ import static org.merkart.app.util.Constants.CLAIMS_ROLES_KEY;
 import static org.merkart.app.util.Constants.TOKEN_DURATION_MINUTES;
 
 @RestController
-@RequestMapping( "/auth" )
+@RequestMapping( "v1/auth" )
 public class AuthController
 {
 

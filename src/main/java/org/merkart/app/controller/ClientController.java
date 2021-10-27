@@ -30,12 +30,13 @@ public class ClientController {
         return clientService.findProductById(productId);
     }
 
-    @GetMapping("/kart")
+    //TODO: falla el metodo
+    @GetMapping("/purchasedProducts")
     public List<Invoice> getPurchasedProducts(@RequestParam String clientId){
         return clientService.getPurchasedProducts(clientId);
     }
 
-    @PutMapping("/kart/add")
+    @PutMapping("/purchaseProducts")
     public Invoice purchaseProducts(@RequestParam String clientId,@RequestBody List<Product> selectedProducts){
         return clientService.insertInvoice(clientId,selectedProducts);
     }

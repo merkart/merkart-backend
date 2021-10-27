@@ -1,7 +1,6 @@
-package org.merkart.app.controller;
+package org.merkart.app.controller.user;
 
 
-import org.merkart.app.controller.dto.UserDto;
 import org.merkart.app.repository.documents.User;
 import org.merkart.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @RestController
-@RequestMapping( "/user" )
+@RequestMapping( "/v1/user" )
 public class UserController
 {
 
@@ -31,7 +30,7 @@ public class UserController
     }
 
 
-    @GetMapping("/all")
+    @GetMapping
     public List<User> all()
     {
         return userService.all();

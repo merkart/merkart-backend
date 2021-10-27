@@ -31,7 +31,7 @@ public class ProductController {
     public Product getProductByName(@PathVariable String productName){
         return productService.findByName(productName);
     }
-    @GetMapping("/name/search/{productName}")
+    @GetMapping("/namecontains/{productName}")
     public List<Product> getProductByNameContains(@PathVariable String productName){
         return productService.findByNameContains(productName);
     }

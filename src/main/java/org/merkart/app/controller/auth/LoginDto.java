@@ -1,4 +1,4 @@
-package org.merkart.app.controller.dto.auth;
+package org.merkart.app.controller.auth;
 
 import lombok.Getter;
 
