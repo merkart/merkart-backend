@@ -1,4 +1,4 @@
-package org.merkart.app.controller.auth;
+package org.merkart.app.controller.dto.auth;
 
 import java.util.Date;
 
