@@ -10,28 +10,36 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @EnableWebSecurity
-@EnableGlobalMethodSecurity( securedEnabled = true, jsr250Enabled = true, prePostEnabled = true )
+@EnableGlobalMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled = true)
 public class SecurityConfiguration
-        extends WebSecurityConfigurerAdapter
-{
+        extends WebSecurityConfigurerAdapter {
 
     JwtRequestFilter jwtRequestFilter;
 
-    public SecurityConfiguration( @Autowired JwtRequestFilter jwtRequestFilter )
-    {
+    public SecurityConfiguration(@Autowired JwtRequestFilter jwtRequestFilter) {
         this.jwtRequestFilter = jwtRequestFilter;
     }
+
     @Override
-    protected void configure( HttpSecurity http )
-            throws Exception
-    {
-        http.addFilterBefore( jwtRequestFilter,
-                BasicAuthenticationFilter.class ).cors().and().csrf().disable().authorizeRequests().antMatchers( HttpMethod.POST,
-                "/v1/auth" ).permitAll().anyRequest().authenticated().and().sessionManagement().sessionCreationPolicy(
-                SessionCreationPolicy.STATELESS );
+    protected void configure(HttpSecurity http)
+            throws Exception {
+        http.addFilterBefore(jwtRequestFilter,
+                BasicAuthenticationFilter.class).cors().and().csrf().disable().authorizeRequests()
+                .antMatchers(HttpMethod.POST, "/v1/auth")
+                .permitAll().and().sessionManagement().sessionCreationPolicy(
+                SessionCreationPolicy.STATELESS);
     }
 }
 /*
+@Override
+    protected void configure(HttpSecurity http)
+            throws Exception {
+        http.addFilterBefore(jwtRequestFilter,
+                BasicAuthenticationFilter.class).cors().and().csrf().disable().authorizeRequests()
+                .antMatchers(HttpMethod.POST, "/v1/auth")
+                .permitAll().anyRequest().authenticated().and().sessionManagement().sessionCreationPolicy(
+                SessionCreationPolicy.STATELESS);
+    }
 * http.addFilterBefore( jwtRequestFilter,
                          BasicAuthenticationFilter.class ).cors().and().csrf().disable().authorizeRequests().antMatchers(
            HttpMethod.GET, "/v1/health" ).permitAll().antMatchers( HttpMethod.POST,
