@@ -51,13 +51,11 @@ public class MongoShoppingKartService implements ShoppingKartService {
 
 	@Override
 	public boolean deleteAll(String clientId, String productId) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean deleteQuantity(String clientId, String prouctId, int quentity) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

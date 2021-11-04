@@ -48,8 +48,8 @@ public class ShoppingKartController {
 	@PutMapping("/{clientId}")
 	public ResponseEntity<?> addProduct(@PathVariable String clientId, @RequestBody ProductDto productDto) {
 		try {
-			return ResponseEntity.accepted()
-					.body(shoppingKartService.addProduct(clientId, new Product(productDto)));
+			shoppingKartService.addProduct(clientId, new Product(productDto));
+			return ResponseEntity.accepted().build();
 		} catch (Exception ex) {
 			return ResponseEntity.internalServerError().build();
 		}
@@ -58,18 +58,18 @@ public class ShoppingKartController {
 	@DeleteMapping("/{clientId}/{productId}/all")
 	public ResponseEntity<?> deleteProduct(@PathVariable String clientId, @PathVariable String productId) {
 		try {
-			shoppingKartService.deleteAll(clientId, productId);
-			return ResponseEntity.accepted().build();
+			return ResponseEntity.accepted()
+					.body(shoppingKartService.deleteAll(clientId, productId));
 		} catch (Exception ex) {
 			return ResponseEntity.internalServerError().build();
 		}
 	}
 	
 	@DeleteMapping("/{clientId}/{productId}/{quantity}")
-	public ResponseEntity<?> deleteProductQuantity(@PathVariable String clientId, @PathVariable String productId, @PathVariable int quentity) {
+	public ResponseEntity<?> deleteProductQuantity(@PathVariable String clientId, @PathVariable String productId, @PathVariable int quantity) {
 		try {
-			shoppingKartService.deleteQuantity(clientId, productId, quentity);
-			return ResponseEntity.accepted().build();
+			return ResponseEntity.accepted()
+					.body(shoppingKartService.deleteQuantity(clientId, productId, quantity));
 		} catch (Exception ex) {
 			return ResponseEntity.internalServerError().build();
 		}
