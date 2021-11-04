@@ -7,6 +7,8 @@ import org.merkart.app.repository.documents.Product;
 public interface ShoppingKartService {
 
 	List<Product> getShoppingKart(String cliendId);
-	boolean addProduct(String clientId, Product product);
+	void addProduct(String clientId, Product product);
+	boolean deleteAll(String clientId, String productId);
+	boolean deleteQuantity(String clientId, String prouctId, int quentity);
 
 }

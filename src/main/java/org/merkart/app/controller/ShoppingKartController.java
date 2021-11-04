@@ -5,6 +5,7 @@ import org.merkart.app.repository.documents.Product;
 import org.merkart.app.service.ShoppingKartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -49,6 +50,26 @@ public class ShoppingKartController {
 		try {
 			return ResponseEntity.accepted()
 					.body(shoppingKartService.addProduct(clientId, new Product(productDto)));
+		} catch (Exception ex) {
+			return ResponseEntity.internalServerError().build();
+		}
+	}
+	
+	@DeleteMapping("/{clientId}/{productId}/all")
+	public ResponseEntity<?> deleteProduct(@PathVariable String clientId, @PathVariable String productId) {
+		try {
+			shoppingKartService.deleteAll(clientId, productId);
+			return ResponseEntity.accepted().build();
+		} catch (Exception ex) {
+			return ResponseEntity.internalServerError().build();
+		}
+	}
+	
+	@DeleteMapping("/{clientId}/{productId}/{quantity}")
+	public ResponseEntity<?> deleteProductQuantity(@PathVariable String clientId, @PathVariable String productId, @PathVariable int quentity) {
+		try {
+			shoppingKartService.deleteQuantity(clientId, productId, quentity);
+			return ResponseEntity.accepted().build();
 		} catch (Exception ex) {
 			return ResponseEntity.internalServerError().build();
 		}
