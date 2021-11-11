@@ -9,6 +9,7 @@ public interface ShoppingKartService {
 	List<Product> getShoppingKart(String cliendId);
 	void addProduct(String clientId, Product product);
 	boolean deleteAll(String clientId, String productId);
+	boolean deleteAll(String clientId);
 	boolean deleteQuantity(String clientId, String prouctId, int quentity);
 
 }

@@ -65,6 +65,16 @@ public class ShoppingKartController {
 		}
 	}
 	
+	@DeleteMapping("/{clientId}")
+	public ResponseEntity<?> deleteKart(@PathVariable String clientId) {
+		try {
+			return ResponseEntity.accepted()
+			.body(shoppingKartService.deleteAll(clientId));
+		} catch (Exception ex) {
+			return ResponseEntity.internalServerError().build();
+		}
+	}
+	
 	@DeleteMapping("/{clientId}/{productId}/{quantity}")
 	public ResponseEntity<?> deleteProductQuantity(@PathVariable String clientId, @PathVariable String productId, @PathVariable int quantity) {
 		try {
