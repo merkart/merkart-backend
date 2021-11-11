@@ -1,7 +1,5 @@
 package org.merkart.app.util;
 
-import ch.qos.logback.core.net.server.Client;
-
 public class Constants {
     public  static String CLAIMS_ROLES_KEY = "Client";
     public  static String COOKIE_NAME = "";
