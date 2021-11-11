@@ -11,10 +11,6 @@ import java.util.List;
 public class UserDto {
     private String name;
     private String lastName;
-    private String typeOfId;
-    private String idNumber;
-    private String country;
-    private String phone;
     private String email;
     private String password;
     private List<Invoice> invoices;
