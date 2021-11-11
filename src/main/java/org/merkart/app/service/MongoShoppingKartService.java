@@ -51,12 +51,37 @@ public class MongoShoppingKartService implements ShoppingKartService {
 
 	@Override
 	public boolean deleteAll(String clientId, String productId) {
-		return false;
+		var kart = kartRepo.findById(clientId)
+				.orElseThrow();
+		kart.getProducts().clear();
+		kartRepo.save(kart);
+		return true;		
 	}
 
 	@Override
-	public boolean deleteQuantity(String clientId, String prouctId, int quentity) {
-		return false;
+	public boolean deleteQuantity(String clientId, String prouctId, int quantity) {
+		var kart = kartRepo.findById(clientId)
+				.orElseThrow();
+		kart.getProducts()
+			.stream()
+			.forEach((product) -> {
+				if (product.getId().equals(prouctId)) {
+					product.setQuantity((int) Math.max(0, product.getQuantity()-quantity));
+				}
+			});
+		kart.getProducts()
+			.stream()
+			.filter((product) -> {
+				return product.getQuantity() == 0;
+			});
+		kartRepo.save(kart);
+		return true;
+	}
+
+	@Override
+	public boolean deleteAll(String clientId) {
+		kartRepo.deleteById(clientId);
+		return true;
 	}
 
 }

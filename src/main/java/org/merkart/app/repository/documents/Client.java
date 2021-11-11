@@ -18,10 +18,6 @@ public class Client extends User {
         super();
         setName(clientDto.getName());
         setLastName(clientDto.getLastName());
-        setIdNumber(clientDto.getIdNumber());
-        setTypeOfId(clientDto.getTypeOfId());
-        setPhone(clientDto.getPhone());
-        setCountry(clientDto.getCountry());
         setPassword(clientDto.getPassword());
         setEmail(clientDto.getEmail());
         setInvoices(clientDto.getInvoices());
