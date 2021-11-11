@@ -77,4 +77,17 @@ public class ArtisanController {
     {
         return artisanService.updateProductById(artisanId,new Product(productUpdateDto));
     }
+    
+    @DeleteMapping("/{artisanId}/{productId}")
+    public ResponseEntity<?> deleteProduct(@PathVariable String artisanId, @PathVariable String productId) {
+    	try {
+    		return ResponseEntity.ok()
+    				.body(artisanService.deleteProduct(artisanId, productId));
+    	} catch (Exception ex) {
+    		return ResponseEntity.internalServerError().build();
+    	}
+    }
+    
+    
+    
 }

@@ -17,4 +17,5 @@ public interface ArtisanService {
     Product findProductById(String productId, String artisanId);
     Product selectProduct(String productId);
     Product updateProductById(String artisanId, Product product);
+    boolean deleteProduct(String artisanId, String productId);
 }

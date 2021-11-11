@@ -105,5 +105,17 @@ public class MongoArtisanService implements ArtisanService {
         return null;
     }
 
+	@Override
+	public boolean deleteProduct(String artisanId, String productId) {
+		var artisan = artisanRepository.findById(artisanId)
+				.orElseThrow();
+		artisan.getProductList()
+			.stream()
+			.filter(product -> product.getId().equals(productId))
+			.close();
+		artisanRepository.save(artisan);
+		return true;
+	}
+
 
 }
