@@ -1,5 +1,7 @@
 package org.merkart.app.service;
 
+import java.util.List;
+
 import org.merkart.app.controller.dto.CategoryDto;
 import org.merkart.app.exception.NotFoundException;
 import org.merkart.app.repository.CategoryRepository;
@@ -35,4 +37,10 @@ public class MongoCategoryService implements CategoryService{
     public Category update(String id, CategoryDto newCategoryDto) throws NotFoundException {
         return categoryRepository.save(CategoryMapper.updateCategory(getById(id), newCategoryDto));
     }
+
+
+	@Override
+	public List<Category> getAll() {
+		return categoryRepository.findAll();
+	}
 }

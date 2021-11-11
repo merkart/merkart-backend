@@ -18,6 +18,16 @@ public class CategoryController {
     public CategoryController(CategoryService categoryService){
         this.categoryService = categoryService;
     }
+    
+    @GetMapping("/all")
+    public ResponseEntity<?> getAll() {
+    	try {
+    		return ResponseEntity.ok()
+    				.body(categoryService.getAll());
+    	} catch (Exception ex) {
+    		return ResponseEntity.internalServerError().build();
+    	}
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getById(@PathVariable String id) {
