@@ -6,6 +6,7 @@ import org.merkart.app.controller.dto.SaleHistoryDto;
 import org.merkart.app.repository.documents.ArtisanRecord;
 import org.merkart.app.repository.documents.SaleRecord;
 import org.merkart.app.service.HistoryService;
+import org.merkart.app.util.SaleHistoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ public class HistoryController {
 	private HistoryService<ArtisanRecord> artisanHistoryServ;
 	
 	@Autowired
-	public HistoryController(@Qualifier("sales-hist") HistoryService salesHistoryServ, @Qualifier("artisan-hist") HistoryService artisanHistoryServ) {
+	public HistoryController(@Qualifier("sales-hist") HistoryService salesHistoryServ, @Qualifier("artisan-hist") HistoryService  artisanHistoryServ) {
 		this.salesHistoryServ = salesHistoryServ;
 		this.artisanHistoryServ = artisanHistoryServ;
 	}
@@ -53,11 +54,11 @@ public class HistoryController {
 		}
 	}
 	
-	@GetMapping("/sales/date-engine/{date}&{end}")
+	@GetMapping("/sales/date-engine/{start}&{end}")
 	public ResponseEntity<?> getByDate(@PathVariable Date startDate, @PathVariable Date endDate) {
 		try {
 			return ResponseEntity.ok()
-					.body( salesHistoryServ.getByDateRange(startDate, endDate) );
+					.body( salesHistoryServ.getByDateRange(startDate, ((endDate != null) ? endDate : startDate)) );
 		} catch (Exception ex) {
 			return ResponseEntity.internalServerError().build();
 		}
@@ -67,7 +68,7 @@ public class HistoryController {
 	@PutMapping("/sales/{clientId}")
 	public ResponseEntity<?> saveSale(@PathVariable String clientId, @RequestBody SaleHistoryDto saleDto) {
 		try {
-			salesHistoryServ.saveRecord(saleDto);
+			salesHistoryServ.saveRecord(SaleHistoryMapper.toSaleRecord(saleDto));
 			return ResponseEntity.accepted().build();
 		} catch (Exception ex) {
 			return ResponseEntity.internalServerError().build();
