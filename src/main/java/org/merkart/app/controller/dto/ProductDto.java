@@ -17,6 +17,9 @@ public class ProductDto {
     private String placeOfCreation;
     private Date createdAt;
     private boolean isSelected;
+    
+    private String urlVideo;
+    private String urlImage;
 
     private int quantity;
     private Category Category;
