@@ -22,6 +22,9 @@ public class Product {
     private String artisanId;
     private String description;
     private int quantity;
+    
+    private String urlVideo;
+    private String urlImage;
 
     private int cost;
     private String placeOfCreation;
