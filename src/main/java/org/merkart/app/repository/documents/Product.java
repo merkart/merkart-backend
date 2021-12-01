@@ -41,6 +41,10 @@ public class Product {
         this.artisanId=productDto.getArtisanId();
         this.description=productDto.getDescription();
         this.quantity=productDto.getQuantity();
+        
+        this.setUrlImage(productDto.getUrlImage());
+        this.setUrlVideo(productDto.getUrlVideo());
+        
         this.cost=productDto.getCost();
         this.placeOfCreation=productDto.getPlaceOfCreation();
         this.createdAt=productDto.getCreatedAt();
@@ -53,6 +57,10 @@ public class Product {
         this.artisanId=product.getArtisanId();
         this.description=product.getDescription();
         this.quantity=product.getQuantity();
+        
+        this.setUrlImage(product.getUrlImage());
+        this.setUrlVideo(product.getUrlVideo());
+        
         this.cost=product.getCost();
         this.placeOfCreation=product.getPlaceOfCreation();
         this.createdAt=product.getCreatedAt();
